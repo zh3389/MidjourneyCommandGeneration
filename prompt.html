@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Midjourney Prompt Generator</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+
+		header {
+			background-color: #007bff;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 36px;
+			margin: 0;
+		}
+
+		nav {
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,.1);
+			padding: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		nav li {
+			margin: 0 10px;
+			font-size: 18px;
+			font-weight: bold;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all .2s ease-in-out;
+		}
+
+		nav li:hover {
+			color: #007bff;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		.category {
+			margin: 10px;
+			padding: 10px;
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,.1);
+			flex-basis: 90%;
+			/*text-align: center;*/
+		}
+
+		.category h2 {
+			font-size: 24px;
+			margin: 0 0 10px;
+		}
+
+		.category label {
+			/*display: block;*/
+			margin: 10px 0;
+		}
+
+		.category input[type="checkbox"] {
+			margin-right: 10px;
+		}
+
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all .2s ease-in-out;
+		}
+
+		.btn:hover {
+			background-color: #0062cc;
+		}
+
+		.prompt {
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,.1);
+			padding: 20px;
+			margin-top: 20px;
+			width: 100%;
+			text-align: center;
+		}
+
+		.prompt h2 {
+			font-size: 24px;
+			margin: 0 0 10px;
+		}
+
+		.prompt p {
+			font-size: 18px;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Midjourney Prompt Generator</h1>
+	</header>
+
+<div class="container">
+	<div class="category">
+		<h2>整体定制</h2>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】cyberpunk clothing::0.6, cartoon, disney style,surrounded by neon - lit cityscape reflections, vray render, ray tracing, subsurface scattering">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="At night, 【此处修改为图像主题的动作或行为描述】, surrounded by fireflies, the moonlight is very bright, carrying a lantern, Chinese style, c4d, octane render, atmosphere, high-quality pictures, 3d art, animation lighting, Pixar trend">皮克斯动画</label>
+		<label><input type="radio" name="customization" value="environment design by Adriaen van de VenneAlien,planets, deserts, giant technological structures,【此处修改为图像主题的动作或行为描述】">外太空黄土行星风</label>
+		<label><input type="radio" name="customization" value="【喂图】cartoon boy and cartoon girl,【风格类型 PIXAR STYLE】">皮克斯卡通头像</label>
+		<label><input type="radio" name="customization" value="studio Ghibli,Blueberry,flowerRich details,【此处修改为图像主题的动作或行为描述】">宫崎骏风格插画</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】made of Lego,domsday survival,8k,HD,cinematography,photorealistic,epic,compositio">乐高风格场景</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】,3d blender render,soft smooth lighting,science and technology background,100mm lens,4k UHD,isometric,tilt-shift --ar 3:4">微缩场景</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】,holographic,sincere,opre,smooth surface,colorful transparent plastic,designed by dieter rams,high detail,4k,industrial design,white background,solid,profile,sleek glass thickness,studio lighting,4K --ar 3:4">缤纷/霓虹系列</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】,clean bright and undersea world background,dreamy,excited,lP by pop mart,high detail,hyper quality, Bright color, mockup blind box toy, disney style,fine luster,3D render, oc render,best quality,8kbrightfront lighting,Face Shotfine luster,ultra detoiled --ar 3:4">卡通泡泡玛特人偶</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像场景内包含的物体名称逗号隔开】,Game Asset style in a low poly model,isometric,tilt-shift,16bit pixel art 16,trendy IP by pop mart,IP mockup,blind box toy,fine luster,white background,3D render,oc render,4K,best quality,ultra detailed,night light --ar 3:4">轴测图立体场景</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">赛博朋克风</label>
+	</div>
+
+	<div class="category">
+		<h2>场景</h2>
+		<label><input type="checkbox" name="scenes" value="Snowy region">雪域</label>
+		<label><input type="checkbox" name="scenes" value="above the clouds">飞跃云端</label>
+		<label><input type="checkbox" name="scenes" value="Plateau">高原</label>
+		<label><input type="checkbox" name="scenes" value="Temple">寺庙</label>
+		<label><input type="checkbox" name="scenes" value="Grassland">草原</label>
+		<label><input type="checkbox" name="scenes" value="Cave">洞穴</label>
+		<label><input type="checkbox" name="scenes" value="Island">海岛</label>
+		<label><input type="checkbox" name="scenes" value="Wilderness">蛮荒之地</label>
+		<label><input type="checkbox" name="scenes" value="Valley">山谷</label>
+		<label><input type="checkbox" name="scenes" value="Swamp">沼泽地</label>
+		<label><input type="checkbox" name="scenes" value="Palace">宫殿</label>
+		<label><input type="checkbox" name="scenes" value="Pool">水潭</label>
+		<label><input type="checkbox" name="scenes" value="Icy tundra">冰天雪地</label>
+		<label><input type="checkbox" name="scenes" value="Ancient battlefield">古代战场</label>
+		<label><input type="checkbox" name="scenes" value="Hall">大厅</label>
+		<label><input type="checkbox" name="scenes" value="Waterfall">瀑布</label>
+		<label><input type="checkbox" name="scenes" value="Mechanism">机关</label>
+		<label><input type="checkbox" name="scenes" value="Tribe">部落</label>
+		<label><input type="checkbox" name="scenes" value="Illusory realm">幻境</label>
+		<label><input type="checkbox" name="scenes" value="Deep In The Woods">密林深处</label>
+		<label><input type="checkbox" name="scenes" value="Coastline">海岸线</label>
+		<label><input type="checkbox" name="scenes" value="Sea of clouds">云海</label>
+		<label><input type="checkbox" name="scenes" value="dreamland">梦境</label>
+		<label><input type="checkbox" name="scenes" value="Fantasy">幻想</label>
+		<label><input type="checkbox" name="scenes" value="Realism">现实主义</label>
+		<label><input type="checkbox" name="scenes" value="Unbridled imagination">异想天开</label>
+		<label><input type="checkbox" name="scenes" value="A powerful and unconstrained">天马行空</label>
+		<label><input type="checkbox" name="scenes" value="Surrealism">超现实主义</label>
+		<label><input type="checkbox" name="scenes" value="Hyperrealism">超写实主义</label>
+		<label><input type="checkbox" name="scenes" value="Ruins">废墟</label>
+		<label><input type="checkbox" name="scenes" value="City centre">城市中心</label>
+		<label><input type="checkbox" name="scenes" value="Abandoned city">废弃城市</label>
+		<label><input type="checkbox" name="scenes" value="Street view">街景</label>
+		<label><input type="checkbox" name="scenes" value="Universe">宇宙</label>
+		<label><input type="checkbox" name="scenes" value="Galaxy">银河系</label>
+		<label><input type="checkbox" name="scenes" value="Nebula">星云</label>
+		<label><input type="checkbox" name="scenes" value="In the morning fog">晨雾</label>
+		<label><input type="checkbox" name="scenes" value="different world">异世界</label>
+		<label><input type="checkbox" name="scenes" value="hell">地狱</label>
+		<label><input type="checkbox" name="scenes" value="Overgrown with weeds">杂草丛生</label>
+		<label><input type="checkbox" name="scenes" value="Alpine meadow">高山草甸</label>
+		<label><input type="checkbox" name="scenes" value="The Hanging Gardens">空中花园</label>
+		<label><input type="checkbox" name="scenes" value="vestige">遗迹</label>
+		<label><input type="checkbox" name="scenes" value="Bright background">干净背景</label>
+		<label><input type="checkbox" name="scenes" value="Apocalypse">世界末日</label>
+	</div>
+
+	<div class="category">
+		<h2>画风</h2>
+		<label><input type="checkbox" name="styles" value="Makoto Shinkai">新海诚</label>
+		<label><input type="checkbox" name="styles" value="Miyazaki Hayao style">宫崎骏风格</label>
+		<label><input type="checkbox" name="styles" value="studio ghibli">宫崎骏工作室风格</label>
+		<label><input type="checkbox" name="styles" value="pixar style">皮克斯风格</label>
+		<label><input type="checkbox" name="styles" value="Disney-style">迪士尼风</label>
+		<label><input type="checkbox" name="styles" value="3D">3D风格</label>
+
+		<label><input type="checkbox" name="styles" value="out of LEGO">乐高风格</label>
+		<label><input type="checkbox" name="styles" value="Pokemon style">宝可梦风格</label>
+		<label><input type="checkbox" name="styles" value="Pokémon">宝可梦</label>
+		<label><input type="checkbox" name="styles" value="MARIO STYLE">马里奥风格</label>
+		<label><input type="checkbox" name="styles" value="Cyberpunk-style">赛博朋克风格</label>
+		<label><input type="checkbox" name="styles" value="Cyberpunk">赛博朋克</label>
+		<label><input type="checkbox" name="styles" value="Game-style">游戏风格</label>
+		<label><input type="checkbox" name="styles" value="90s video game">90年代电视游戏</label>
+		<label><input type="checkbox" name="styles" value="8bit/16bit pixar">像素风</label>
+		<label><input type="checkbox" name="styles" value="Minecraft style">我的世界</label>
+		<label><input type="checkbox" name="styles" value="plasticine">橡皮泥风格</label>
+		<label><input type="checkbox" name="styles" value="Layered Paper">折纸风格</label>
+		<label><input type="checkbox" name="styles" value="paper cut craft">剪纸风格</label>
+		<label><input type="checkbox" name="styles" value="Embroidery Art">刺绣艺术</label>
+		<label><input type="checkbox" name="styles" value="Graffiti art">涂鸦风</label>
+		<label><input type="checkbox" name="styles" value="doodle">涂鸦</label>
+		<label><input type="checkbox" name="styles" value="painting">油画</label>
+		<label><input type="checkbox" name="styles" value="Hand-drawn style">手绘风格</label>
+		<label><input type="checkbox" name="styles" value="Ukiyoe">浮世绘</label>
+		<label><input type="checkbox" name="styles" value="Japanese Ukiyo-e">浮世绘</label>
+
+		<label><input type="checkbox" name="styles" value="manga">漫画</label>
+		<label><input type="checkbox" name="styles" value="ACGN">二次元</label>
+		<label><input type="checkbox" name="styles" value="cartoon">卡通风格</label>
+		<label><input type="checkbox" name="styles" value="Lolita">洛丽塔风格</label>
+		<label><input type="checkbox" name="styles" value="jojo's bizarre adventure">JoJo的奇妙冒险</label>
+		<label><input type="checkbox" name="styles" value="Japanese comics/manga">日本漫画风格</label>
+		<label><input type="checkbox" name="styles" value="Japanese-style">日本风格</label>
+		<label><input type="checkbox" name="styles" value="poster of japanese graphic design">日本海报风格</label>
+		<label><input type="checkbox" name="styles" value="Anime">日本动画片</label>
+		<label><input type="checkbox" name="styles" value="Fairy Kei fashion">仙女风</label>
+		<label><input type="checkbox" name="styles" value="chinese ink style">中国水墨风</label>
+		<label><input type="checkbox" name="styles" value="chinese Shadow Puppets">皮影戏风格</label>
+		<label><input type="checkbox" name="styles" value="Chinese-style">中式风格</label>
+		<label><input type="checkbox" name="styles" value="New Chinese Style">新中式风格</label>
+		<label><input type="checkbox" name="styles" value="Tradition Chinese Ink Painting">东方山水画</label>
+		<label><input type="checkbox" name="styles" value="Fairy tale style">童话风格</label>
+
+		<label><input type="checkbox" name="styles" value="poster style">电影海报风</label>
+		<label><input type="checkbox" name="styles" value="cinematic">电影般的</label>
+		<label><input type="checkbox" name="styles" value="film photography">剪辑</label>
+		<label><input type="checkbox" name="styles" value="Miniature movie style">微缩模型电影风格</label>
+		<label><input type="checkbox" name="styles" value="Cinematography style">电影摄影风格</label>
+		<label><input type="checkbox" name="styles" value="Hollywood-style">电影风格</label>
+		<label><input type="checkbox" name="styles" value="Pulp Noir">黑白电影时期</label>
+
+		<label><input type="checkbox" name="styles" value="symmetrical portrait">对称肖像</label>
+		<label><input type="checkbox" name="styles" value="clear facial features">清晰的面部特征</label>
+		<label><input type="checkbox" name="styles" value="fluorescent">荧光颜色</label>
+		<label><input type="checkbox" name="styles" value="blender 3d, pastelbackground">粉彩背景blender建模</label>
+		<label><input type="checkbox" name="styles" value="realistic">真实的</label>
+		<label><input type="checkbox" name="styles" value="photoreal">真实感</label>
+		<label><input type="checkbox" name="styles" value="Surrealism">超现实主义</label>
+		<label><input type="checkbox" name="styles" value="Magic Realism Style">魔幻现实主义风格</label>
+		<label><input type="checkbox" name="styles" value="OP Art /Optical Art">欧普艺术/光效应艺术</label>
+		<label><input type="checkbox" name="styles" value="character concept art">角色概念艺术</label>
+
+		<label><input type="checkbox" name="styles" value="Science fiction">科幻</label>
+		<label><input type="checkbox" name="styles" value="futuristic">未来主义</label>
+		<label><input type="checkbox" name="styles" value="Futuristic Style">未来主义风格</label>
+		<label><input type="checkbox" name="styles" value="Steampunk">蒸汽朋克</label>
+		<label><input type="checkbox" name="styles" value="Magic realism">魔幻现实</label>
+
+		<label><input type="checkbox" name="styles" value="Warframe">星际战甲</label>
+		<label><input type="checkbox" name="styles" value="APEX">Apex英雄</label>
+		<label><input type="checkbox" name="styles" value="The Elder Scrolls">上古卷轴</label>
+		<label><input type="checkbox" name="styles" value="botw">旷野之息</label>
+		<label><input type="checkbox" name="styles" value="From Software">魂系游戏</label>
+		<label><input type="checkbox" name="styles" value="Detroit: Become Human">底特律：变人</label>
+		<label><input type="checkbox" name="styles" value="AFK Arena">剑与远征</label>
+		<label><input type="checkbox" name="styles" value="cookierun kingdom and">跑跑姜饼人</label>
+		<label><input type="checkbox" name="styles" value="League of legends">英雄联盟</label>
+		<label><input type="checkbox" name="styles" value="weapon design">武器设计</label>
+		<label><input type="checkbox" name="styles" value="Game scene graph">游戏场景图</label>
+
+		<label><input type="checkbox" name="styles" value="Fauvism">野兽派</label>
+		<label><input type="checkbox" name="styles" value="brutalist">粗犷主义</label>
+		<label><input type="checkbox" name="styles" value="Constructivist">建构主义</label>
+		<label><input type="checkbox" name="styles" value="concept art">概念艺术</label>
+		<label><input type="checkbox" name="styles" value="Abstract">抽象风</label>
+		<label><input type="checkbox" name="styles" value="Abstract Art">抽象表现主义</label>
+		<label><input type="checkbox" name="styles" value="Impressionism">印象派</label>
+		<label><input type="checkbox" name="styles" value="Neo-impressionism">新印象派</label>
+		<label><input type="checkbox" name="styles" value="french art">法国艺术</label>
+
+		<label><input type="checkbox" name="styles" value="Leonardo Da Vinci">达芬奇</label>
+		<label><input type="checkbox" name="styles" value="Vincent Van Gogh">梵高</label>
+		<label><input type="checkbox" name="styles" value="Claude Monet">克劳德莫奈</label>
+		<label><input type="checkbox" name="styles" value="Voynich manuscript">伏尼契手稿</label>
+		<label><input type="checkbox" name="styles" value="Ghibli Studio">吉卜力风格</label>
+		<label><input type="checkbox" name="styles" value="Yamada Akihiro">山田章博</label>
+
+		<label><input type="checkbox" name="styles" value="Forest">森林风格</label>
+		<label><input type="checkbox" name="styles" value="Ocean">海洋风格</label>
+		<label><input type="checkbox" name="styles" value="Prairie">草原风格</label>
+		<label><input type="checkbox" name="styles" value="Eco-friendly-style">环保清新风格</label>
+
+		<label><input type="checkbox" name="styles" value="interior design">室内设计</label>
+		<label><input type="checkbox" name="styles" value="Modern-style">现代风格</label>
+		<label><input type="checkbox" name="styles" value="Fashion">时尚</label>
+		<label><input type="checkbox" name="styles" value="Minimalism">极简主义</label>
+		<label><input type="checkbox" name="styles" value="Modern Minimalist">现代简约风格</label>
+		<label><input type="checkbox" name="styles" value="Modern Luxury">现代奢华风格</label>
+		<label><input type="checkbox" name="styles" value="Art Deco Style">艺术装饰风格</label>
+		<label><input type="checkbox" name="styles" value="Pearl Milk Tea Style">珍珠奶茶风格</label>
+		<label><input type="checkbox" name="styles" value="Art Nouveau">新艺术风格</label>
+		<label><input type="checkbox" name="styles" value="Industrial">工业风格</label>
+		<label><input type="checkbox" name="styles" value="Gothic gloomy realism">写实主义</label>
+		<label><input type="checkbox" name="styles" value="hyperrealism">超写实主义</label>
+		<label><input type="checkbox" name="styles" value="Minimalist">极简主义</label>
+		<label><input type="checkbox" name="styles" value="Carving Art">雕刻艺术风格</label>
+		<label><input type="checkbox" name="styles" value="Flat design">扁平化设计</label>
+		<label><input type="checkbox" name="styles" value="Material Design">材质设计</label>
+		<label><input type="checkbox" name="styles" value="subsurface scattering">次表面散射</label>
+		<label><input type="checkbox" name="styles" value="Long shadow design">长阴影设计</label>
+		<label><input type="checkbox" name="styles" value="Motion design">运动设计</label>
+		<label><input type="checkbox" name="styles" value="architectural sketching">建筑素描</label>
+
+		<label><input type="checkbox" name="styles" value="Renaissance">文艺复兴</label>
+		<label><input type="checkbox" name="styles" value="Ethnic Art">民族艺术</label>
+		<label><input type="checkbox" name="styles" value="Country style">乡村风格</label>
+		<label><input type="checkbox" name="styles" value="Neoclassical">新古典主义</label>
+		<label><input type="checkbox" name="styles" value="American Country">美式乡村风格</label>
+		<label><input type="checkbox" name="styles" value="Ethnic">民族风格</label>
+		<label><input type="checkbox" name="styles" value="Victorian">维多利亚时代</label>
+		<label><input type="checkbox" name="styles" value="18-19th century-style">古典风格，18-19世纪</label>
+
+		<label><input type="checkbox" name="styles" value="Traditional culture">传统文化</label>
+		<label><input type="checkbox" name="styles" value="Immersive design">沉浸式设计</label>
+		<label><input type="checkbox" name="styles" value="Mystic fantasy">神秘幻想</label>
+		<label><input type="checkbox" name="styles" value="pointillism">点彩派</label>
+		<label><input type="checkbox" name="styles" value="quilted art">绗缝艺术</label>
+		<label><input type="checkbox" name="styles" value="partial anatomy">局部解剖</label>
+
+		<label><input type="checkbox" name="styles" value="Acrylic painting">丙烯画</label>
+		<label><input type="checkbox" name="styles" value="volumetric lihht">体积法</label>
+		<label><input type="checkbox" name="styles" value="Bauhaus">包豪斯</label>
+		<label><input type="checkbox" name="styles" value="Unity Creations">统一创作</label>
+		<label><input type="checkbox" name="styles" value="Rococo">洛可可</label>
+		<label><input type="checkbox" name="styles" value="Cubism">立体派</label>
+		<label><input type="checkbox" name="styles" value="Stained glass window">彩色玻璃窗</label>
+		<label><input type="checkbox" name="styles" value="risograph">riso印刷风</label>
+		<label><input type="checkbox" name="styles" value="Gothic-style">哥特式</label>
+		<label><input type="checkbox" name="styles" value="full details">哥特式黑暗</label>
+		<label><input type="checkbox" name="styles" value="retro dark vintage">复古 黑暗</label>
+		<label><input type="checkbox" name="styles" value="book page">书页</label>
+		<label><input type="checkbox" name="styles" value="sophisticated">复杂的</label>
+		<label><input type="checkbox" name="styles" value="national geographic">国家地理</label>
+		<label><input type="checkbox" name="styles" value="Skeuomorphism">拟物化设计</label>
+		<label><input type="checkbox" name="styles" value="Handwriting style">手写风格</label>
+		<label><input type="checkbox" name="styles" value="New Print Style">新印刷风格</label>
+		<label><input type="checkbox" name="styles" value="Sandbox">沙盘模型</label>
+		<label><input type="checkbox" name="styles" value="Line art">线条艺术</label>
+		<label><input type="checkbox" name="styles" value="Pop art">波普艺术</label>
+		<label><input type="checkbox" name="styles" value="Vintage">古着</label>
+		<label><input type="checkbox" name="styles" value="black and white">黑白</label>
+		<label><input type="checkbox" name="styles" value="montage">蒙太奇</label>
+		<label><input type="checkbox" name="styles" value="DreamWorks Pictures">梦工厂黜业</label>
+		<label><input type="checkbox" name="styles" value="CGSociety">梦工厂动西风格</label>
+		<label><input type="checkbox" name="styles" value="Munashichi">六七质</label>
+		<label><input type="checkbox" name="styles" value="Watercolor children's illustration">水彩儿童插画</label>
+		<label><input type="checkbox" name="styles" value="stock illustration style">童话故事书插图风格</label>
+		<label><input type="checkbox" name="styles" value="Soejima Shigenori">副岛成记</label>
+		<label><input type="checkbox" name="styles" value="color ink on paper">纸本彩色墨水</label>
+		<label><input type="checkbox" name="styles" value="Ink Wash Painting Style">水墨风格</label>
+		<label><input type="checkbox" name="styles" value="Graphic ink render">图形墨迹渲染</label>
+		<label><input type="checkbox" name="styles" value="ink render">黑水渲染</label>
+		<label><input type="checkbox" name="styles" value="ink illustration">水墨插图</label>
+		<label><input type="checkbox" name="styles" value="Axis shifting photography">轴移动摄影</label>
+		<label><input type="checkbox" name="styles" value="Tilt-shift photography">移轴摄影</label>
+		<label><input type="checkbox" name="styles" value="knolling">knolling摆拍</label>
+		<label><input type="checkbox" name="styles" value="enesis">创世纪风格</label>
+		<label><input type="checkbox" name="styles" value="subconsciousness">潜意识</label>
+		<label><input type="checkbox" name="styles" value="architectural design">建筑设计风格</label>
+		<label><input type="checkbox" name="styles" value="Romanticism">浪漫主义</label>
+		<label><input type="checkbox" name="styles" value="Classicism">古典主义</label>
+		<label><input type="checkbox" name="styles" value="Classical Realism">古典现实主义</label>
+		<label><input type="checkbox" name="styles" value="Neoclassicism">新古典主义</label>
+		<label><input type="checkbox" name="styles" value="Modernism">现代主义</label>
+		<label><input type="checkbox" name="styles" value="Postmodernism">后现代主义</label>
+		<label><input type="checkbox" name="styles" value="Realism">现实主义</label>
+		<label><input type="checkbox" name="styles" value="Dadaism">达达主义</label>
+		<label><input type="checkbox" name="styles" value="Hyperrealism">超现实主义</label>
+		<label><input type="checkbox" name="styles" value="Brutalism">野性主义</label>
+		<label><input type="checkbox" name="styles" value="Fauvism">野兽主义</label>
+		<label><input type="checkbox" name="styles" value="Expressionism">表现主义</label>
+		<label><input type="checkbox" name="styles" value="Luminism">光色主义</label>
+		<label><input type="checkbox" name="styles" value="Japonism">日本主义</label>
+		<label><input type="checkbox" name="styles" value="Magic Realism">魔幻现实主义</label>
+		<label><input type="checkbox" name="styles" value="Fantastic Realism">奇幻现实主义</label>
+		<label><input type="checkbox" name="styles" value="Synchronism">同步主义</label>
+		<label><input type="checkbox" name="styles" value="Deconstructivism">解构主义</label>
+		<label><input type="checkbox" name="styles" value="Abstract Expressionism">抽象表现主义</label>
+		<label><input type="checkbox" name="styles" value="Minimalism">极简主义</label>
+		<label><input type="checkbox" name="styles" value="Constructivism">构成主义</label>
+		<label><input type="checkbox" name="styles" value="Contemporary Realism">当代现实主义</label>
+		<label><input type="checkbox" name="styles" value="Futurism">未来主义</label>
+		<label><input type="checkbox" name="styles" value="Miserablism">悲惨主义</label>
+		<label><input type="checkbox" name="styles" value="Academism">学院主义</label>
+		<label><input type="checkbox" name="styles" value="Cubism">立体主义</label>
+		<label><input type="checkbox" name="styles" value="Structuralism">结构主义</label>
+		<label><input type="checkbox" name="styles" value="Poststructuralism">后结构主义</label>
+	</div>
+
+	<div class="category">
+		<h2>视角</h2>
+		<label><input type="checkbox" name="views" value="aerial view">鸟瞰图</label>
+		<label><input type="checkbox" name="views" value="Top view">顶视图</label>
+		<label><input type="checkbox" name="views" value="tilt-shift">倾斜移位</label>
+		<label><input type="checkbox" name="views" value="satellite view">卫星视图</label>
+		<label><input type="checkbox" name="views" value="Bottom view">底视图</label>
+		<label><input type="checkbox" name="views" value="tront view">前视图</label>
+		<label><input type="checkbox" name="views" value="side view">侧视图</label>
+		<label><input type="checkbox" name="views" value="rear view">后视图</label>
+		<label><input type="checkbox" name="views" value="product view">产品视图</label>
+		<label><input type="checkbox" name="views" value="lookup">仰视</label>
+		<label><input type="checkbox" name="views" value="first-person view">第一人称视角</label>
+		<label><input type="checkbox" name="views" value="isometric view">等距视图</label>
+		<label><input type="checkbox" name="views" value="closeup view">特写视图</label>
+		<label><input type="checkbox" name="views" value="high angle view">高角度视图</label>
+		<label><input type="checkbox" name="views" value="microscopic view">微观</label>
+		<label><input type="checkbox" name="views" value="third-person perspective">第三人称视角</label>
+		<label><input type="checkbox" name="views" value="two-point perspective">两点透视</label>
+		<label><input type="checkbox" name="views" value="Three-point perspective">三点透视</label>
+		<label><input type="checkbox" name="views" value="Elevation perspective">立面透视</label>
+		<label><input type="checkbox" name="views" value="ultra wide shot">超广角镜头</label>
+		<label><input type="checkbox" name="views" value="cinematic shot">电影镜头</label>
+		<label><input type="checkbox" name="views" value="in focus">焦点对准</label>
+		<label><input type="checkbox" name="views" value="depth of field">景深</label>
+		<label><input type="checkbox" name="views" value="Wide-angle view">广角镜头</label>
+	</div>
+
+	<div class="category">
+		<h2>光照</h2>
+		<label><input type="checkbox" name="lights" value="cold light">冷光</label>
+		<label><input type="checkbox" name="lights" value="Warm light">暖光</label>
+		<label><input type="checkbox" name="lights" value="bright">明亮的</label>
+		<label><input type="checkbox" name="lights" value="atmospheric lighting">氛围感照明</label>
+		<label><input type="checkbox" name="lights" value="hard lighting">强光/硬光</label>
+		<label><input type="checkbox" name="lights" value="rim lights">边缘灯</label>
+		<label><input type="checkbox" name="lights" value="Split Lighting">分体照明</label>
+		<label><input type="checkbox" name="lights" value="Split Lighting">前灯</label>
+		<label><input type="checkbox" name="lights" value="Back lighting">背光照明</label>
+		<label><input type="checkbox" name="lights" value="Crepuscular Ray">黄昏的光线</label>
+		<label><input type="checkbox" name="lights" value="fluorescent lighting">荧光灯</label>
+		<label><input type="checkbox" name="lights" value="Rembrandt Lighting">伦勃朗光</label>
+		<label><input type="checkbox" name="lights" value="morning light">晨光</label>
+		<label><input type="checkbox" name="lights" value="soft lights">柔光</label>
+		<label><input type="checkbox" name="lights" value="cinematic lighting">电影照明</label>
+		<label><input type="checkbox" name="lights" value="clean background trending">千净的背景趋势</label>
+		<label><input type="checkbox" name="lights" value="global illuminations">全局照明</label>
+		<label><input type="checkbox" name="lights" value="neon cold lighting">霄虹灯冷光</label>
+		<label><input type="checkbox" name="lights" value="neon lights">霓虹灯</label>
+		<label><input type="checkbox" name="lights" value="volumetric lighting">体积照明</label>
+		<label><input type="checkbox" name="lights" value="dramatic lighting">舞台灯光</label>
+		<label><input type="checkbox" name="lights" value="natural lighting">自然灯光</label>
+	</div>
+
+	<div class="category">
+		<h2>相机</h2>
+		<label><input type="checkbox" name="cameras" value="NIKON">尼康</label>
+		<label><input type="checkbox" name="cameras" value="CANON">佳能</label>
+		<label><input type="checkbox" name="cameras" value="SONY">索尼</label>
+		<label><input type="checkbox" name="cameras" value="FUJIFILM">富士</label>
+		<label><input type="checkbox" name="cameras" value="PANASONIC">松下</label>
+		<label><input type="checkbox" name="cameras" value="LEICA" checked/>徕卡</label>
+		<label><input type="checkbox" name="cameras" value="PENTAX">宾得</label>
+		<label><input type="checkbox" name="cameras" value="RICOH">理光</label>
+		<label><input type="checkbox" name="cameras" value="HASSELBLAD">哈苏</label>
+		<label><input type="checkbox" name="cameras" value="POLAROID">宝丽来</label>
+		<label><input type="checkbox" name="cameras" value="DSLR">单反</label>
+	</div>
+
+	<div class="category">
+		<h2>镜头与画质</h2>
+		<label><input type="checkbox" name="lens" value="18mm">18mm</label>
+		<label><input type="checkbox" name="lens" value="24mm">24mm</label>
+		<label><input type="checkbox" name="lens" value="35mm">35mm</label>
+		<label><input type="checkbox" name="lens" value="50mm">50mm</label>
+		<label><input type="checkbox" name="lens" value="85mm">85mm</label>
+		<label><input type="checkbox" name="lens" value="135mm">135mm</label>
+		<label><input type="checkbox" name="lens" value="200mm">200mm</label>
+		<label><input type="checkbox" name="lens" value="300mm">300mm</label>
+		<label><input type="checkbox" name="lens" value="600mm">600mm</label>
+		<label><input type="checkbox" name="lens" value="4K">4K</label>
+		<label><input type="checkbox" name="lens" value="8K" checked/>8K</label>
+		<label><input type="checkbox" name="lens" value="HD">HD</label>
+		<label><input type="checkbox" name="lens" value="HDR">HDR</label>
+		<label><input type="checkbox" name="lens" value="UHDR" checked/>UHDR</label>
+	</div>
+
+	<div class="category">
+		<h2>垫图相似度</h2>
+		<label><input type="radio" name="similarity" value="--iw 0.1">0.1</label>
+		<label><input type="radio" name="similarity" value="--iw 0.5">0.5</label>
+		<label><input type="radio" name="similarity" value="--iw 1">1</label>
+		<label><input type="radio" name="similarity" value="--iw 1.5">1.5</label>
+		<label><input type="radio" name="similarity" value="--iw 2">2</label>
+	</div>
+
+	<div class="category">
+		<h2>图像比例</h2>
+		<label><input type="radio" name="scale" value="--ar 1:1">1:1</label>
+		<label><input type="radio" name="scale" value="--ar 1:2">1:2</label>
+		<label><input type="radio" name="scale" value="--ar 2:1">2:1</label>
+		<label><input type="radio" name="scale" value="--ar 2:3">2:3</label>
+		<label><input type="radio" name="scale" value="--ar 3:2">3:2</label>
+		<label><input type="radio" name="scale" value="--ar 9:16">9:16</label>
+		<label><input type="radio" name="scale" value="--ar 16:9">16:9</label>
+	</div>
+
+	<div class="category">
+		<h2>艺术性强度配置</h2>
+		<label><input type="radio" name="art" value="--stylize 50">Style Low</label>
+		<label><input type="radio" name="art" value="--stylize 100">Style Med</label>
+		<label><input type="radio" name="art" value="--stylize 250">Style High</label>
+		<label><input type="radio" name="art" value="--stylize 750">Style Very High</label>
+	</div>
+
+	<div class="category">
+		<h2>模型风格</h2>
+		<label><input type="radio" name="modelStyle" value="--style raw">RAW</label>
+		<label><input type="radio" name="modelStyle" value="--style cute">可爱</label>
+		<label><input type="radio" name="modelStyle" value="--style scenic">风景优美</label>
+		<label><input type="radio" name="modelStyle" value="--style original">最初的</label>
+		<label><input type="radio" name="modelStyle" value="--style expressive">有表现力</label>
+	</div>
+
+	<div class="category">
+		<h2>模型版本</h2>
+		<label><input type="radio" name="modelversion" value="--v 6">MJ v6</label>
+		<label><input type="radio" name="modelversion" value="--v 5.2">MJ v5.2</label>
+		<label><input type="radio" name="modelversion" value="--v 5.1">MJ v5.1</label>
+		<label><input type="radio" name="modelversion" value="--v 5">MJ v5</label>
+		<label><input type="radio" name="modelversion" value="--niji 6">NIJI 6</label>
+		<label><input type="radio" name="modelversion" value="--niji 5" checked/>NIJI 5</label>
+	</div>
+</div>
+
+<div class="container">
+	<button class="btn">生成Prompt</button>
+</div>
+
+<div class="container">
+	<div class="prompt">
+		<h2>Prompt:</h2>
+
+		<p></p>
+	</div>
+</div>
+
+<script>
+	const generatePromptButton = document.querySelector('.btn');
+const promptOutput = document.querySelector('.prompt p');
+
+generatePromptButton.addEventListener('click', () => {
+const customizationCheckboxes = document.querySelectorAll('input[name="customization"]:checked');
+const sceneCheckboxes = document.querySelectorAll('input[name="scenes"]:checked');
+const styleCheckboxes = document.querySelectorAll('input[name="styles"]:checked');
+const viewCheckboxes = document.querySelectorAll('input[name="views"]:checked');
+const lightCheckboxes = document.querySelectorAll('input[name="lights"]:checked');
+const cameraCheckboxes = document.querySelectorAll('input[name="cameras"]:checked');
+const lenCheckboxes = document.querySelectorAll('input[name="lens"]:checked');
+
+const similarityCheckboxes = document.querySelectorAll('input[name="similarity"]:checked');
+const scaleCheckboxes = document.querySelectorAll('input[name="scale"]:checked');
+const artCheckboxes = document.querySelectorAll('input[name="art"]:checked');
+const modelStyleCheckboxes = document.querySelectorAll('input[name="modelStyle"]:checked');
+const modelversionCheckboxes = document.querySelectorAll('input[name="modelversion"]:checked');
+
+const customizations = getValuesFromCheckboxes(customizationCheckboxes);
+const scenes = getValuesFromCheckboxes(sceneCheckboxes);
+const styles = getValuesFromCheckboxes(styleCheckboxes);
+const views = getValuesFromCheckboxes(viewCheckboxes);
+const lights = getValuesFromCheckboxes(lightCheckboxes);
+const cameras = getValuesFromCheckboxes(cameraCheckboxes);
+const lens = getValuesFromCheckboxes(lenCheckboxes);
+
+const similaritys = getValuesFromCheckboxes(similarityCheckboxes);
+const scales = getValuesFromCheckboxes(scaleCheckboxes);
+const arts = getValuesFromCheckboxes(artCheckboxes);
+const modelStyles = getValuesFromCheckboxes(modelStyleCheckboxes);
+const modelversions = getValuesFromCheckboxes(modelversionCheckboxes);
+const prompt = customizations.concat(scenes, styles,views,lights,cameras,lens).join(',');
+const parameter = similaritys.concat(scales, arts, modelStyles, modelversions).join(' ');
+let result = prompt + ', ' + parameter;
+promptOutput.textContent = result;
+});
+
+function getValuesFromCheckboxes(checkboxes) {
+const values = [];
+checkboxes.forEach((checkbox) => {
+    values.push(checkbox.value);
+});
+return values;
+}
+
+
+</script>
+</body>
+</html>
