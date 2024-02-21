@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Midjourney Prompt Generator</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+
+		header {
+			background-color: #007bff;
+			color: #000000;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 36px;
+			margin: 0;
+		}
+
+		nav {
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,.1);
+			padding: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		nav li {
+			margin: 0 10px;
+			font-size: 18px;
+			font-weight: bold;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all .2s ease-in-out;
+		}
+
+		nav li:hover {
+			color: #007bff;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+		}
+
+		.category {
+			margin: 10px;
+			padding: 10px;
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,.1);
+			flex-basis: 90%;
+			/*text-align: center;*/
+		}
+
+		.category h2 {
+			font-size: 24px;
+			margin: 0 0 10px;
+		}
+
+		.category label {
+			/*display: block;*/
+			margin: 10px 0;
+		}
+
+		.category input[type="checkbox"] {
+			margin-right: 10px;
+		}
+
+		.btn {
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all .2s ease-in-out;
+		}
+
+		.btn:hover {
+			background-color: #0062cc;
+		}
+
+		.prompt {
+			background-color: #fff;
+			box-shadow: 0 5px 10px rgba(0,0,0,.1);
+			padding: 20px;
+			margin-top: 20px;
+			width: 100%;
+			text-align: center;
+		}
+
+		.prompt h2 {
+			font-size: 24px;
+			margin: 0 0 10px;
+		}
+
+		.prompt p {
+			font-size: 18px;
+			margin: 0;
+		}
+		/* 帮助按钮CSS */
+		#helpTooltip {
+			display: none;
+			position: absolute;
+			background-color: #f0f0f0;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			text-align: left;
+		}
+
+		#helpButton {
+			cursor: pointer;
+			background-color: transparent; /* 设置背景透明 */
+			border: none; /* 移除边框 */
+			outline: none; /* 移除默认的轮廓样式 */
+		}
+
+		/* 帮助按钮CSS */
+	</style>
+</head>
+<body>
+	<header>
+		<button id="helpButton"><h1>Midjourney Prompt Generator</h1></button>
+		<div id="helpTooltip">
+			<pre>
+			如何组合提示词一
+			主体描述: 一句话告诉AI你要描述的画面，修饰词+主体+场景+动作
+			环境场景: 你想象的主体所处的环境，光线，氛围，色系
+			艺术风格: 设计风格/艺术家名字/漫画影视作品/艺术网站
+			媒介材料: 油画/水彩/摄影/手稿/雕塑/陶瓷/布料/黏士/石头
+			摄像机视角: 特写视图/两点透视/广角镜头/景深/正视图/全身照
+			作品精度定义: 高品质/超级细节/复杂细节/高分辦率/HD/2K/4K/尺寸比例
+			如果是3D渲染: 再加上3D软件＋渲染器＋材质＋光照＋逼真的渲染风格
+
+			如何组合提示词二
+			</pre>
+		</div>
+	</header>
+
+<div class="container">
+	<div class="category">
+		<h2>整体定制</h2>
+		<label><input type="radio" name="customization" value="【此处修改为垫图链接】, cartoon, PIXAR STYLE, 8k, --s 750 --niji 5">皮克斯卡通头像</label>
+		<br>
+		<label><input type="radio" name="customization" value="studio Ghibli,Blueberry,flowerRich details,【此处修改为图像主题的动作或行为描述】">宫崎骏风格插画</label>
+		<label><input type="radio" name="customization" value="At night, 【此处修改为图像主题的动作或行为描述】, surrounded by fireflies, the moonlight is very bright, carrying a lantern, Chinese style, c4d, octane render, atmosphere, high-quality pictures, 3d art, animation lighting, Pixar trend">皮克斯动画</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】made of Lego,domsday survival,8k,HD,cinematography,photorealistic,epic,compositio">乐高风格场景</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】,clean bright and undersea world background,dreamy,excited,lP by pop mart,high detail,hyper quality, Bright color, mockup blind box toy, disney style,fine luster,3D render, oc render,best quality,8kbrightfront lighting,Face Shotfine luster,ultra detoiled --ar 3:4">卡通泡泡玛特人偶</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】cyberpunk clothing::0.6, cartoon, disney style,surrounded by neon - lit cityscape reflections, vray render, ray tracing, subsurface scattering">赛博朋克风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】,holographic,sincere,opre,smooth surface,colorful transparent plastic,designed by dieter rams,high detail,4k,industrial design,white background,solid,profile,sleek glass thickness,studio lighting,4K --ar 3:4">缤纷/霓虹系列</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】,3d blender render,soft smooth lighting,science and technology background,100mm lens,4k UHD,isometric,tilt-shift --ar 3:4">微缩场景</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像场景内包含的物体名称逗号隔开】,Game Asset style in a low poly model,isometric,tilt-shift,16bit pixel art 16,trendy IP by pop mart,IP mockup,blind box toy,fine luster,white background,3D render,oc render,4K,best quality,ultra detailed,night light --ar 3:4">轴测图立体场景</label>
+		<label><input type="radio" name="customization" value="environment design by Adriaen van de VenneAlien,planets, deserts, giant technological structures,【此处修改为图像主题的动作或行为描述】">外太空黄土行星风</label>
+		<label><input type="radio" name="customization" value="【此处修改为图像主题的动作或行为描述】">待添加</label>
+	</div>
+
+</div>
+
+<div class="container">
+	<button class="btn">生成Prompt</button>
+</div>
+
+<div class="container">
+	<div class="prompt">
+		<h2>Prompt:</h2>
+
+		<p></p>
+	</div>
+</div>
+
+<script>
+// 帮助按钮JavaScript
+document.addEventListener('DOMContentLoaded', function () {
+    const helpButton = document.getElementById('helpButton');
+    const helpTooltip = document.getElementById('helpTooltip');
+
+    helpButton.addEventListener('mouseover', function () {
+        showTooltip();
+    });
+
+    helpButton.addEventListener('mouseout', function () {
+        hideTooltip();
+    });
+
+    function showTooltip() {
+        helpTooltip.style.display = 'block';
+    }
+
+    function hideTooltip() {
+        helpTooltip.style.display = 'none';
+    }
+});
+// 帮助按钮JavaScript
+
+	const generatePromptButton = document.querySelector('.btn');
+const promptOutput = document.querySelector('.prompt p');
+
+generatePromptButton.addEventListener('click', () => {
+const customizationCheckboxes = document.querySelectorAll('input[name="customization"]:checked');
+
+const customizations = getValuesFromCheckboxes(customizationCheckboxes);
+
+const prompt = customizations;
+promptOutput.textContent = prompt;
+});
+
+function getValuesFromCheckboxes(checkboxes) {
+const values = [];
+checkboxes.forEach((checkbox) => {
+    values.push(checkbox.value);
+});
+return values;
+}
+
+
+</script>
+</body>
+</html>
